@@ -10,7 +10,7 @@
 
 	<?php
 		require_once 'player.php';
-		
+		// test révision githubb
 		try
 		{
 			$conection = 'mysql:host=localhost;dbname=perso';

@@ -290,6 +290,7 @@
 				if($player1->getNbPots() > 0)
 				{
 					$player1->potionAcid($player2);
+					$player1->setNbPots($player1->getNbPots()-1);
 					header("Location: battle.php?display=1&name=$name&name2=$name2&logs=13");
 				}
 				else
@@ -301,6 +302,7 @@
 				header("Location: index.php?error=4");
 			}	
 			$player2->save();
+			$player1->save();
 		}
 		else if ($player1->getClasse()=="Berserker")
 		{
@@ -390,6 +392,7 @@
 				if($player2->getNbPots() > 0)
 				{
 					$player2->potionAcid($player1);
+					$player2->setNbPots($player2->getNbPots()-1);
 					header("Location: battle.php?display=1&name=$name&name2=$name2&logs=1313");
 				}
 				else
@@ -400,6 +403,7 @@
 				header("Location: index.php?error=4");
 			}
 			$player1->save();
+			$player2->save();
 		}
 		
 		else if ($player2->getClasse()=="Berserker")
